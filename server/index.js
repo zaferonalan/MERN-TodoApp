@@ -1,14 +1,15 @@
 import express from "express";
 import AuthRoute from "./routes/auth.js"
 import TodosRoute from "./routes/todo.js"
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 const app = express()
 const PORT = 3000
 
 dotenv.config()
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
+app.use(express.json());
 app.use("/api/user", AuthRoute)
 app.use("/api/todos", TodosRoute)
 
@@ -20,9 +21,9 @@ app.get("/", (req, res, next) => {
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
     const message = err.message || "Internal server Error"
-    res.status(statusCode).json({erorr: message})
+    res.status(statusCode).json({error: message})
 })
 
 app.listen(PORT, () =>{
-    console.log(`listinin on port ${PORT}`)
+    console.log(`Listening on port ${PORT}`)
 })
