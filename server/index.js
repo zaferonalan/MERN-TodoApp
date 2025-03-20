@@ -1,8 +1,9 @@
 import express from "express";
 import AuthRoute from "./routes/auth.js"
 import TodosRoute from "./routes/todo.js"
-// import bodyParser from "body-parser";
 import dotenv from "dotenv";
+// import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
 
 const app = express()
 const PORT = 3000
@@ -10,6 +11,7 @@ const PORT = 3000
 dotenv.config()
 // app.use(bodyParser.json())
 app.use(express.json());
+app.use(cookieParser())
 app.use("/api/user", AuthRoute)
 app.use("/api/todos", TodosRoute)
 
