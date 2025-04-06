@@ -30,8 +30,8 @@ export async function updateTodo(req, res, next) {
             if(todo.userID.toString() !== req.user.id)
                 return next(createError(404, "Not Authorized!"))
             todo.title = req.body.title || todo.title;
-            if(req.body.isComplated !== undefined)
-                todo.isComplated = req.body.isComplated
+            if(req.body.isCompleted !== undefined)
+                todo.isCompleted = req.body.isCompleted
             await todo.save()
             res.status(200).json({message: "Todo updated!"})
         } catch (error) {
