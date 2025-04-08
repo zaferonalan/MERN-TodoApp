@@ -134,5 +134,5 @@ body{
   @apply bg-[#5cb85c]
 }
 .iconHover{
-  @apply fill-slate-300 transition ease-in-out hover:cursor-pointer hover:fill-primary
+  @apply transition ease-in-out hover:cursor-pointer hover:text-primary hover:underline
 }

@@ -19,7 +19,7 @@ const Register = () => {
         <Button>Register</Button>
         <span className='text-[#63657b] text-center'>
           Already have an account?{" "}
-          <Link to="/login" className='transition ease-in-out hover:cursor-pointer hover:text-primary hover:underline'>Login</Link>
+          <Link to="/login" className='iconHover'>Login</Link>
         </span>
       </form>
     </div>
